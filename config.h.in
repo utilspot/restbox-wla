@@ -1,0 +1,6 @@
+/* config.h.  Generated from cconfig.h.in by CMake.  */
+
+#cmakedefine RESTBOX_ASSETS_DIR  "@RESTBOX_ASSETS_DIR@"
+#cmakedefine RESTBOX_BASE_URL    "@RESTBOX_BASE_URL@"
+#cmakedefine RESTBOX_ROOT_URL    "@RESTBOX_ROOT_URL@"
+#cmakedefine RESTBOX_SERVICE_URL "@RESTBOX_SERVICE_URL@"
