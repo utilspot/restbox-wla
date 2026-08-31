@@ -1,0 +1,33 @@
+{
+  "name": "restbox-wla",
+  "version": "1.0.0",
+  "description": "Web client for building and sending HTTP requests",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/utilspot/restbox-wla",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utilspot/restbox-wla.git"
+  },
+  "scripts": {
+    "dev": "node server/index.js",
+    "start": "NODE_ENV=production node server/index.js",
+    "build": "tsc --noEmit && vite build",
+    "build:dev": "tsc --noEmit && vite build --mode development",
+    "bitmake": "npx bitmake build",
+    "server": "build/package/bin/restbox_server",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^5.2.0",
+    "bitmake": "^0.0.1-develop.15",
+    "httpie": "^1.1.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "typescript": "^5.6.3",
+    "vite": "^8.2.2"
+  }
+}
