@@ -193,6 +193,11 @@ export function App() {
           setActiveId(null);
           lastEntryRef.current = null;
         }}
+        onDelete={(id) => {
+          setHistory((current) => current.filter((entry) => entry.id !== id));
+          if (activeId === id) setActiveId(null);
+          if (lastEntryRef.current?.id === id) lastEntryRef.current = null;
+        }}
         onNew={handleNew}
       />
 

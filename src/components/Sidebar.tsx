@@ -6,6 +6,7 @@ interface SidebarProps {
   activeId: string | null;
   onPick: (entry: HistoryEntry) => void;
   onClear: () => void;
+  onDelete: (id: string) => void;
   onNew: () => void;
 }
 
@@ -19,7 +20,7 @@ function relativeTime(ts: number): string {
   return `${Math.round(hours / 24)}d ago`;
 }
 
-export function Sidebar({ history, activeId, onPick, onClear, onNew }: SidebarProps) {
+export function Sidebar({ history, activeId, onPick, onClear, onDelete, onNew }: SidebarProps) {
   return (
     <aside className="sidebar">
       <div className="sidebar__brand">
@@ -48,7 +49,7 @@ export function Sidebar({ history, activeId, onPick, onClear, onNew }: SidebarPr
       <ul className="history">
         {history.length === 0 && <li className="history__empty">Nothing sent yet.</li>}
         {history.map((entry) => (
-          <li key={entry.id}>
+          <li key={entry.id} className="history__row">
             <button
               type="button"
               className={`history__item${entry.id === activeId ? ' history__item--active' : ''}`}
@@ -70,6 +71,16 @@ export function Sidebar({ history, activeId, onPick, onClear, onNew }: SidebarPr
                 {relativeTime(entry.savedAt)}
               </span>
             </button>
+            <button
+              type="button"
+              className="history__delete"
+              onClick={(event) => {
+                event.stopPropagation();
+                onDelete(entry.id);
+              }}
+              title="Delete"
+              aria-label="Delete this history entry"
+            />
           </li>
         ))}
       </ul>
