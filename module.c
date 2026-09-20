@@ -3,14 +3,14 @@
 #define NQ_LOG_TAG "restbox"
 
 #include <libnetq/Log.h>
-#include <libnetq/String.h>
+#include <libnetq/string/String.h>
 #include <libnetq/Library.h>
-#include <libnetq/Path.h>
+#include <libnetq/fs/Path.h>
 #include <libnetq/ErrorCode.h>
-#include <libnetq/HttpHeader.h>
-#include <libnetq/HttpMethod.h>
-#include <libnetq/HttpStatus.h>
-#include <libnetq/MediaType.h>
+#include <libnetq/http/HttpHeader.h>
+#include <libnetq/http/HttpMethod.h>
+#include <libnetq/http/HttpStatus.h>
+#include <libnetq/http/MediaType.h>
 #include <libnetq/Module.h>
 #include <libnetq/Malloc.h>
 #include <libnetq/ByteBuffer.h>

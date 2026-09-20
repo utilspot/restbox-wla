@@ -206,13 +206,17 @@ button {
   padding: 8px 4px;
 }
 
+.history__row {
+  position: relative;
+}
+
 .history__item {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 8px;
   width: 100%;
-  padding: 7px 8px;
+  padding: 7px 26px 7px 8px;
   border: 0;
   border-radius: 6px;
   background: transparent;
@@ -227,6 +231,53 @@ button {
 
 .history__item--active {
   background: rgba(124, 92, 255, 0.14);
+}
+
+.history__delete {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.history__delete::before,
+.history__delete::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.history__delete::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.history__delete::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.history__row:hover .history__delete,
+.history__delete:focus-visible {
+  opacity: 1;
+}
+
+.history__delete:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-dim);
 }
 
 .history__url-wrap {
